@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KnowledgeHub - Interactive Q&A</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color:#87CEEB;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color:#003b46;
+      color: white;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .container h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #003b46;
+    }
+
+    .container p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .domains {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .card a {
+      text-decoration: none;
+      font-size: 18px;
+      color: #005f6b;
+      font-weight: bold;
+    }
+.owner-section {
+  background-color: #f9f9f9;
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.owner-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #005f6b;
+}
+
+.owner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.owner-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #005f6b;
+}
+
+.owner-info h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  color: #002f4b;
+}
+
+.owner-info p {
+  max-width: 700px;
+  margin: 5px auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
+@media (min-width: 768px) {
+  .owner-card {
+    flex-direction: row;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .owner-info {
+    text-align: left;
+  }
+}
+
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #003b46;
+      color: #fff;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profile">
+      <img src="https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg" alt="User Profile">
+      <div>Hello, user</div>
+    </div>
+    <h2>KnowledgeHub</h2>
+  </header>
+
+  <div class="container">
+    <h1 style="font-family:fantacy;font-size:100px">Explore and Ask Questions by Domain</h1>
+    <p style="color:blue;font-family:cursive">Select a category to view or post questions and share your knowledge!</p>
+  </div>
+
+  <section class="domains">
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.elBogdcoeeG4-uP5TnT-HAHaEo?rs=1&pid=ImgDetMain" alt="Kids">
+      <a href="https://www.youtube.com/kids/">Kids</a>
+    </div>
+    <div class="card">
+      <img src="https://static.vecteezy.com/system/resources/previews/001/249/465/original/cute-science-lettering-and-laboratory-icons-banner-template-vector.jpg" alt="Science">
+      <a href="https://www.google.com/search?q=science&sca_esv=caa5732678f1db22&rlz=1C1RXQR_enIN1085IN1085&sxsrf=AHTn8zpOkRtpf295QuKm0PYKVHeFdgjfhg%3A1746529965612&ei=re4ZaIiVJZKUg8UPo-GGmAE&oq=sceince&gs_lp=Egxnd3Mtd2l6LXNlcnAiB3NjZWluY2UqAggAMgcQIxixAhgnMgsQABiABBiRAhiKBTIOEAAYgAQYkQIYsQMYigUyDhAAGIAEGJECGLEDGIoFMgsQABiABBiRAhiKBTILEAAYgAQYkQIYigUyChAAGIAEGLEDGAoyChAAGIAEGLEDGAoyBxAAGIAEGAoyChAAGIAEGLEDGApImSpQ2AlYhxxwAXgAkAEAmAHnAaABuQeqAQUwLjYuMbgBAcgBAPgBAZgCCKAC9weoAhHCAgcQIxgnGOoCwgINECMY8AUYJxjJAhjqAsICExAAGIAEGEMYtAIYigUY6gLYAQHCAhYQLhiABBhDGLQCGMgDGIoFGOoC2AEBwgIKECMYgAQYJxiKBcICBBAjGCfCAg4QABiABBixAxiDARiKBcICCxAAGIAEGLEDGIMBwgIOEC4YgAQYsQMY0QMYxwHCAgYQABgDGArCAgUQLhiABMICCBAAGIAEGLEDwgINEAAYgAQYsQMYQxiKBcICChAuGIAEGEMYigXCAgoQABiABBhDGIoFwgIKEAAYgAQYFBiHAsICERAAGIAEGJECGLEDGIMBGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICBRAAGIAEwgINEAAYgAQYsQMYigUYCpgDBvEFMO_uodrGLSK6BgYIARABGAGSBwUxLjYuMaAHqjqyBwUwLjYuMbgH8Qc&sclient=gws-wiz-serp">Science</a>
+    </div>
+    <div class="card">
+      <img src="https://wallpapercave.com/wp/wp9440164.jpg" alt="General Knowledge">
+      <a href="https://www.google.com/search?q=general+knowledge&sca_esv=caa5732678f1db22&rlz=1C1RXQR_enIN1085IN1085&sxsrf=AHTn8zpq5FhPVPbl7oVtDeakudvnY07O1g%3A1746529901584&ei=be4ZaPqpI8_F4-EPhpHJ4A0&oq=genera&gs_lp=Egxnd3Mtd2l6LXNlcnAiBmdlbmVyYSoCCAIyDRAAGIAEGLEDGEMYigUyChAAGIAEGEMYigUyDRAAGIAEGLEDGEMYigUyDRAAGIAEGLEDGEMYigUyChAAGIAEGEMYigUyDRAAGIAEGLEDGEMYigUyChAAGIAEGEMYigUyDRAAGIAEGLEDGEMYigUyCBAuGIAEGLEDMg0QABiABBixAxhDGIoFSOwgUKcIWPsPcAF4AZABAJgBpQGgAcIFqgEDMS41uAEByAEA-AEBmAIHoAKFBqgCFMICBxAjGCcY6gLCAg0QIxjwBRgnGMkCGOoCwgITEAAYgAQYQxi0AhiKBRjqAtgBAcICEBAuGIAEGNEDGMcBGCcYigXCAgoQIxiABBgnGIoFwgIWEC4YgAQYsQMY0QMYQxiDARjHARiKBcICCxAAGIAEGLEDGIMBwgIQEAAYgAQYsQMYQxiDARiKBcICHRAuGIAEGNEDGMcBGIoFGJcFGNwEGN4EGOAE2AEBwgIQEC4YgAQYsQMYQxiDARiKBcICDRAuGIAEGLEDGEMYigXCAhwQLhiABBixAxhDGIoFGJcFGNwEGN4EGN8E2AEBwgINEC4YgAQYQxjUAhiKBZgDB_EFHaoyjQjVCDG6BgYIARABGAGSBwMxLjagB4k_sgcDMC42uAf-BQ&sclient=gws-wiz-serp">General Knowledge</a>
+    </div>
+    <div class="card">
+      <img src="https://blog.udemy.com/wp-content/uploads/2014/05/bigstock-History-56161577.jpg" alt="History">
+      <a href="https://www.google.com/search?q=history&sca_esv=caa5732678f1db22&rlz=1C1RXQR_enIN1085IN1085&sxsrf=AHTn8zreXbZ1tUb2VTrKPn-04nNe3u9z0Q%3A1746529835365&ei=K-4ZaJyQFraMseMPo4y2yQU&ved=0ahUKEwjc0bTT2o6NAxU2RmwGHSOGLVkQ4dUDCBA&uact=5&oq=history&gs_lp=Egxnd3Mtd2l6LXNlcnAiB2hpc3RvcnkyExAAGIAEGLEDGEMYgwEYyQMYigUyDRAAGIAEGLEDGEMYigUyChAAGIAEGEMYigUyCxAAGIAEGJIDGIoFMgoQABiABBhDGIoFMgoQABiABBhDGIoFMgoQABiABBhDGIoFMgoQABiABBhDGIoFMgoQABiABBhDGIoFMg0QABiABBixAxhDGIoFSOAbUJAFWNkUcAF4AZABAJgBqAGgAd8GqgEDMS42uAEDyAEA-AEBmAIIoAKxB6gCFMICBxAjGCcY6gLCAg0QIxjwBRgnGMkCGOoCwgIQEAAYAxi0AhjqAhiPAdgBAcICChAjGIAEGCcYigXCAgQQIxgnwgILEAAYgAQYkQIYigXCAhEQABiABBiRAhixAxiDARiKBcICDhAuGIAEGLEDGIMBGIoFwgIIEAAYgAQYsQPCAgUQABiABMICERAuGIAEGLEDGIMBGNQCGIoFwgIQEAAYgAQYsQMYQxiDARiKBcICCxAuGIAEGLEDGIMBmAMN8QU7KMtN9aQwvboGBggBEAEYCpIHAzEuN6AH-DKyBwMwLje4B6QH&sclient=gws-wiz-serp">History</a>
+    </div>
+    <div class="card">
+      <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjBN2YzQKw7QaU5yYwTg96PQVvdmj2IReG2zD-npHFBuWmX6T8MNysIbLpLV2l9pgCmTAbBDaKZ5XEkgcOhHXdNredhC1DA0Tt5QiI3NK7AtkRSQR25VXLMzep2Ql1H2zNQEFzgkVZwi73MwbMuEPDZzvt_LmBArGFXiUlzMH4XucwZzEqY1oW94Mc0Lg" alt="Current Affairs">
+      <a href="https://www.google.com/search?q=current+affairs&rlz=1C1RXQR_enIN1085IN1085&oq=curren&gs_lcrp=EgZjaHJvbWUqDwgCEAAYQxixAxiABBiKBTIGCAAQRRg5Mg8IARAAGEMYsQMYgAQYigUyDwgCEAAYQxixAxiABBiKBTIPCAMQABhDGLEDGIAEGIoFMgoIBBAAGLEDGIAEMgcIBRAAGIAEMgwIBhAAGEMYgAQYigUyDAgHEAAYQxiABBiKBTIPCAgQABhDGLEDGIAEGIoFMgwICRAAGEMYgAQYigXSAQk0ODY5ajBqMTWoAgywAgHxBYAW9cC4j_xX8QWAFvXAuI_8Vw&sourceid=chrome&ie=UTF-8">Current Affairs</a>
+    </div>
+  </section>
+<section class="owner-section">
+  <h2>Meet Our Founder</h2>
+  <div class="owner-card">
+    <img src="C:\Users\ACER\OneDrive\Pictures\Saved Pictures\suseel.jpg" alt="Owner Photo">
+    <div class="owner-info">
+      <h3>Mr. Suseel Kumar</h3>
+      <p>Founder & CEO, OilCorp</p>
+      <p>
+        Suseel Kumar is a visionary entrepreneur and a good leader.who is more supportive to build this knowledgehub, he came up with this idea so that many users can easily interact to get slove their queries and doubts through this amazing platfrom,Knowledgehub. </p>
+
+  <footer>
+    &copy; 2025 KnowledgeHub. All Rights Reserved.
+  </footer>
+
+  <script>
+    const domainLinks = document.querySelectorAll(".card a[href^='#']");
+    domainLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        alert(`Navigating to ${link.innerText} domain. (You can link actual pages here)`);
+      });
+    });
+  </script>
+</body>
+</html>
